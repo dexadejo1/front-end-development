@@ -1,64 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>My HTML Document</title>
-	<style>
-		/* Oboji sve linkove koji vode na Google u zeleno */
-		a[href*="google"] {
-			color: green;
-		}
+    <meta charset="UTF-8">
+    <title>Advanced CSS - Assignment 1</title>
+    <style>
+        /* Sve linkove koji upućuju na neku od adresa koje pripadaju sajtu Google obojiti u zeleno */
+        a[href*="google.com"] {
+            color: green;
+        }
 
-		/* Oboji link koji vodi na Link Group u crveno */
-		a[href*="link-group"] {
-			color: red;
-		}
+        /* Tekst linka koji upućuje na LINK group web sajt obojiti u crvenu boju */
+        a[href*="link-group.eu"] {
+            color: red;
+        }
 
-		/* Naizmenično oboji paragrafe u second-div u crveno i plavo */
-		#second-div p:nth-of-type(odd) {
-			background-color: red;
-			color: white;
-		}
+        /* Paragrafe unutar second-div elementa naizmenično obojiti u crvenu i plavu boju */
+        #second-div p:nth-child(odd) {
+            color: red;
+        }
 
-		#second-div p:nth-of-type(even) {
-			background-color: blue;
-			color: white;
-		}
+        #second-div p:nth-child(even) {
+            color: blue;
+        }
 
-		/* Dodaj tekst "NEW" na krajeve Paragrafa 2 i 3 */
-		#second-div p:nth-of-type(2):after,
-		#second-div p:nth-of-type(3):after {
-			content: " NEW";
-			color: yellow;
-		}
+        /* Na krajeve Paragrafa 2 i Paragrafa 3, korišćenjem CSS-a dodati tekst – NEW, žute boje */
+        #first-div p:nth-child(2)::after,
+        #first-div p:nth-child(3)::after {
+            content: " - NEW";
+            color: yellow;
+        }
 
-		/* Promeni stil paragrafa 10 kada se pređe preko njega mišem */
-		#paragraph-10:hover {
-			font-style: italic;
-		}
-	</style>
+        /* Prelaskom miša preko Paragraph 10 elementa, njegov tekst treba da postane italic */
+        #last-p:hover {
+            font-style: italic;
+        }
+    </style>
 </head>
+
 <body>
-	<div id="first-div">
-		<h1>Heading 1</h1>
-		<p>Paragraph 1</p>
-		<a href="http://www.google.com">Google</a>
-		<a href="http://www.google.ca">Google Canada</a>
-		<a href="http://www.link-group.com">Link Group</a>
-	</div>
-	<div id="second-div">
-		<h2>Heading 2</h2>
-		<p>Paragraph 2</p>
-		<p>Paragraph 3</p>
-		<p>Paragraph 4</p>
-		<p>Paragraph 5</p>
-		<p>Paragraph 6</p>
-	</div>
-	<div id="third-div">
-		<h3>Heading 3</h3>
-		<p>Paragraph 7</p>
-		<p>Paragraph 8</p>
-		<p>Paragraph 9</p>
-		<p id="paragraph-10">Paragraph 10</p>
-	</div>
+    <h1>Main Heading</h1>
+    <p>Paragraph 1</p>
+    <a href="https://www.google.com/">Google</a>
+    <a href="https://www.google.com/doodles">Google Doodles</a>
+    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
+    <div id="first-div">
+        <h2>Subheading</h2>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+     <div id="second-div">
+
+
+            <h3>Sub subheading</h3>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+            <p>Paragraph 6</p>
+            <p>Paragraph 7</p>
+            <p>Paragraph 8</p>
+            <p>Paragraph 9</p>
+
+
+        </div>
+    </div>
+
+    <p id="last-p">Paragraph 10</p>
 </body>
+
+</html>
+
+
 </html>
