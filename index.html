@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Advanced CSS - Assignment 1</title>
     <style>
-        /* Sve linkove koji upućuju na neku od adresa koje pripadaju sajtu Google obojiti u zeleno */
         a[href*="google.com"] {
             color: green;
         }
-
-        /* Tekst linka koji upućuje na LINK group web sajt obojiti u crvenu boju */
         a[href*="link-group.eu"] {
             color: red;
         }
-
-        /* Paragrafe unutar second-div elementa naizmenično obojiti u crvenu i plavu boju */
-        #second-div p:nth-child(odd) {
+        
+   #first-div > p:nth-child(2):after,
+   #first-div > p:nth-child(3):after {
+       content: " NEW";
+       color: yellow;
+        }
+        #second-div > p:nth-of-type(1),
+        #second-div > p:nth-of-type(3),
+        #second-div > p:nth-of-type(5),
+        #second-div > p:nth-of-type(7) {
             color: red;
         }
-
-        #second-div p:nth-child(even) {
+        #second-div > p:nth-of-type(2),
+        #second-div > p:nth-of-type(4),
+        #second-div > p:nth-of-type(6) {
             color: blue;
         }
-
-        /* Na krajeve Paragrafa 2 i Paragrafa 3, korišćenjem CSS-a dodati tekst – NEW, žute boje */
-        #first-div p:nth-child(2)::after,
-        #first-div p:nth-child(3)::after {
-            content: " - NEW";
-            color: yellow;
-        }
-
-        /* Prelaskom miša preko Paragraph 10 elementa, njegov tekst treba da postane italic */
-        #last-p:hover {
+        body > p:last-of-type:hover {
             font-style: italic;
         }
     </style>
 </head>
-
 <body>
     <h1>Main Heading</h1>
     <p>Paragraph 1</p>
@@ -47,10 +41,12 @@
     <div id="first-div">
         <h2>Subheading</h2>
         <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-     <div id="second-div">
+
+          <p>Paragraph 3</p>
 
 
+
+        <div id="second-div">
             <h3>Sub subheading</h3>
             <p>Paragraph 4</p>
             <p>Paragraph 5</p>
@@ -58,15 +54,9 @@
             <p>Paragraph 7</p>
             <p>Paragraph 8</p>
             <p>Paragraph 9</p>
-
-
         </div>
     </div>
 
-    <p id="last-p">Paragraph 10</p>
+    <p>Paragraph 10</p>
 </body>
-
-</html>
-
-
 </html>
